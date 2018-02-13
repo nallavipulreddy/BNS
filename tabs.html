@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: black;
+    display: none;
+    text-align: center;
+}
+table{
+border-collapse:collapse;
+background-color:white;
+}
+
+#paris{background-color:green;}
+</style>
+</head>
+<body>
+<button class="tablink" onclick="openCity('telangana', this, 'red')" id="defaultOpen">Map View</button>
+<button class="tablink" onclick="openCity('Paris', this, 'green')">Table View</button>
+<div id="telangana" class="tabcontent">
+  <body>
+<div id="map" style="width:100%;height:268px;background color:floralwhite"></div>
+
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(51.5, -0.2), zoom: 10
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <table align="center"border="1px"style="width:70%;height:120px;">
+  <tr style="text-align:center"><th width="50%">NAME OF THE BUS</th><th>Garuda</th></tr>
+  <tr style="text-align:center"><th>LICENSE PLATE</th><th>----</th></tr>
+  <tr style="text-align:center"><th>DISTANCE </th><th>100kms</th></tr>
+  <tr style="text-align:center"><th>TIME LEFT</th><th>1:30hrs</th></tr>
+  </table><br>
+  <table align="center" border="1px"style="width:70%;height:120px;">
+  <tr style="text-align:center"><th width="50%">NAME OF THE BUS</th><th></th></tr>
+  <tr style="text-align:center"><th>LICENSE PLATE</th><th></th></tr>
+  <tr style="text-align:center"><th>DISTANCE </th><th></th></tr>
+  <tr style="text-align:center"><th>TIME LEFT</th><th></th></tr>
+  </table><br>
+  <table align="center" border="1px"style="width:70%;height:120px;">
+  <tr style="text-align:center"><th width="50%">NAME OF THE BUS</th><th></th></tr>
+  <tr style="text-align:center"><th>LICENSE PLATE</th><th></th></tr>
+  <tr style="text-align:center"><th>DISTANCE </th><th></th></tr>
+  <tr style="text-align:center"><th>TIME LEFT</th><th></th></tr>
+  </table><br>
+  <table align="center" border="1px"style="width:70%;height:120px;">
+  <tr style="text-align:center"><th width="50%">NAME OF THE BUS</th><th></th></tr>
+  <tr style="text-align:center"><th>LICENSE PLATE</th><th></th></tr>
+  <tr style="text-align:center"><th>DISTANCE </th><th></th></tr>
+  <tr style="text-align:center"><th>TIME LEFT</th><th></th></tr>
+  </table><br>
+</div>
+
+<script>
+function openCity(cityName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
